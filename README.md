@@ -1,16 +1,16 @@
-# readily
+# Readily 📖📚📔
 
-A new Flutter project.
+Readily App is a Flutter Project For Mobile Application.
+Readily is a Simple Mobile Application to Read & Buy Books Online.
 
-## Getting Started
+## Our Goal
 
-This project is a starting point for a Flutter application.
+Build a Flutter App with MVVM Design Pattern
 
-A few resources to get you started if this is your first Flutter project:
+Flutter version: 3.13.6
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Created & Developed by:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Eng.Fady Fawzy
+
+Mobile Application Developer
