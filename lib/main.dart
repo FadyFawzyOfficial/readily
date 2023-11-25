@@ -18,7 +18,7 @@ class Readily extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: kScaffoldBackgroundColor,
-        textTheme: GoogleFonts.montserratTextTheme(),
+        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
         appBarTheme: kAppBarTheme,
         cardTheme: kCardTheme,
       ),
