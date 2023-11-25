@@ -16,6 +16,10 @@ class Readily extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: kScaffoldBackgroundColor,
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+        ),
       ),
       home: const SplashView(),
     );

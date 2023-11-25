@@ -60,8 +60,8 @@ class _SlidingAnimationState extends State<SlidingAnimation>
   void navigateToHome() {
     Future.delayed(
       kNavigationDuration,
-      () => Get.to(
-        const HomeView(),
+      () => Get.off(
+        () => const HomeView(),
         transition: Transition.fadeIn,
         duration: kTransitionDuration,
       ),
