@@ -6,11 +6,11 @@ class FeaturedListView extends StatelessWidget {
   const FeaturedListView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     return ListView.separated(
       padding: const EdgeInsets.all(24),
       scrollDirection: Axis.horizontal,
-      itemCount: 2,
+      itemCount: 10,
       itemBuilder: (context, index) => const FeaturedListItem(),
       separatorBuilder: (context, index) => const SizedBox(width: 16),
     );
