@@ -17,24 +17,7 @@ class _SlidingAnimationState extends State<SlidingAnimation>
   @override
   void initState() {
     super.initState();
-
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    );
-
-    slidingAnimation = Tween<Offset>(
-      begin: const Offset(0, 10),
-      end: const Offset(0, 0),
-    ).animate(animationController);
-
-    animationController.forward();
-  }
-
-  @override
-  void dispose() {
-    animationController.dispose();
-    super.dispose();
+    initSlidingAnimation();
   }
 
   @override
@@ -46,5 +29,25 @@ class _SlidingAnimationState extends State<SlidingAnimation>
         child: widget.child,
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  void initSlidingAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(0, 10),
+      end: const Offset(0, 0),
+    ).animate(animationController);
+
+    animationController.forward();
   }
 }
