@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-class SlidingAnimationText extends StatefulWidget {
-  const SlidingAnimationText({super.key});
+class SlidingAnimation extends StatefulWidget {
+  final Widget child;
+
+  const SlidingAnimation({super.key, required this.child});
 
   @override
-  State<SlidingAnimationText> createState() => _SlidingAnimationTextState();
+  State<SlidingAnimation> createState() => _SlidingAnimationState();
 }
 
-class _SlidingAnimationTextState extends State<SlidingAnimationText>
+class _SlidingAnimationState extends State<SlidingAnimation>
     with SingleTickerProviderStateMixin {
   late final AnimationController animationController;
   late final Animation<Offset> slidingAnimation;
@@ -41,7 +43,7 @@ class _SlidingAnimationTextState extends State<SlidingAnimationText>
       animation: slidingAnimation,
       builder: (context, _) => SlideTransition(
         position: slidingAnimation,
-        child: const Text('Read Free Books', textAlign: TextAlign.center),
+        child: widget.child,
       ),
     );
   }

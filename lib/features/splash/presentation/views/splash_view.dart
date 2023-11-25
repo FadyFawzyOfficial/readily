@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/strings.dart';
-import 'widgets/sliding_animation_text.dart';
+import 'widgets/sliding_animation.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
@@ -20,7 +20,12 @@ class SplashViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image(image: AssetImage(kLogoImagePath)),
-        SlidingAnimationText(),
+        SlidingAnimation(
+          child: Text(
+            'Read Free Books',
+            textAlign: TextAlign.center,
+          ),
+        ),
       ],
     );
   }
