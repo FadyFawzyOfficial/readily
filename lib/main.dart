@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'core/constants/colors.dart';
 import 'core/constants/themes.dart';
@@ -17,6 +18,7 @@ class Readily extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: kScaffoldBackgroundColor,
+        textTheme: GoogleFonts.montserratTextTheme(),
         appBarTheme: kAppBarTheme,
         cardTheme: kCardTheme,
       ),
