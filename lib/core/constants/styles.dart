@@ -25,6 +25,11 @@ const ts20Normal = TextStyle(
   fontWeight: FontWeight.normal,
 );
 
+const ts20Bold = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+);
+
 const ts30Normal = TextStyle(
   fontSize: 30,
   fontWeight: FontWeight.normal,
