@@ -11,7 +11,7 @@ class MediumTitle extends StatelessWidget {
       padding: EdgeInsets.only(left: 24),
       child: Align(
         alignment: Alignment.centerLeft,
-        child: Text('Best Sellers', style: kMediumTitleTextStyle),
+        child: Text('Best Sellers', style: ts18SemiBold),
       ),
     );
   }
