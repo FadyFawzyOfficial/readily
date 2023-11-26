@@ -10,6 +10,11 @@ const ts16Medium = TextStyle(
   fontWeight: FontWeight.w500,
 );
 
+const ts16Bold = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+);
+
 const ts18SemiBold = TextStyle(
   fontSize: 18,
   fontWeight: FontWeight.w600,
