@@ -7,11 +7,14 @@ class SellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
+    return SliverPadding(
       padding: const EdgeInsets.all(24),
-      itemCount: 10,
-      itemBuilder: (context, index) => const SellerListTile(),
-      separatorBuilder: (context, index) => const SizedBox(height: 16),
+      sliver: SliverList.separated(
+        // padding: const EdgeInsets.all(24),
+        itemCount: 10,
+        itemBuilder: (context, index) => const SellerListTile(),
+        separatorBuilder: (context, index) => const SizedBox(height: 16),
+      ),
     );
   }
 }

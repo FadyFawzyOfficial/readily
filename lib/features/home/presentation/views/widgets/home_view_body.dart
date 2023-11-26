@@ -9,12 +9,19 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return const Column(
-      children: [
-        Expanded(flex: 3, child: FeaturedListView()),
-        Expanded(child: MediumTitle()),
-        Expanded(flex: 6, child: SellerListView()),
-      ],
+    return LayoutBuilder(
+      builder: (context, constraints) => CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: constraints.maxHeight * 0.3,
+              child: const FeaturedListView(),
+            ),
+          ),
+          const SliverToBoxAdapter(child: MediumTitle()),
+          const SellerListView(),
+        ],
+      ),
     );
   }
 }
