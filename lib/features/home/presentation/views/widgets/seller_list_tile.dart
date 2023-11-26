@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/styles.dart';
-import 'featured_list_item.dart';
+import 'book_image.dart';
 
 class SellerListTile extends StatelessWidget {
   const SellerListTile({super.key});
@@ -10,7 +10,7 @@ class SellerListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(child: FeaturedListItem()),
+        Expanded(child: BookImage()),
         SizedBox(width: 24),
         Expanded(
           flex: 3,

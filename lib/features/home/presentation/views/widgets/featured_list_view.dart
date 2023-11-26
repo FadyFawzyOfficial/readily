@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'featured_list_item.dart';
+import 'book_image.dart';
 
 class FeaturedListView extends StatelessWidget {
   const FeaturedListView({super.key});
@@ -11,7 +11,7 @@ class FeaturedListView extends StatelessWidget {
       padding: const EdgeInsets.all(24),
       scrollDirection: Axis.horizontal,
       itemCount: 10,
-      itemBuilder: (context, index) => const FeaturedListItem(),
+      itemBuilder: (context, index) => const BookImage(),
       separatorBuilder: (context, index) => const SizedBox(width: 16),
     );
   }
