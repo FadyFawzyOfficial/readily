@@ -37,8 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.6
   # A declarative router for Flutter based on Navigation 2 supporting deep linking, data-driven routes and more
   go_router: ^12.1.1
-  # Open screens/snackbar(s)/dialogs without context, manage states and inject dependencies easily with GetX.
-  get: ^4.6.6
   # A Flutter package to use fonts from fonts.google.com. Supports HTTP fetching, caching, and asset bundling.
   google_fonts: ^6.1.0
 

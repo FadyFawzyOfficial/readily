@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 
 import '../../../../../core/constants/durations.dart';
-import '../../../../home/presentation/views/home_view.dart';
 
 class SlidingAnimation extends StatefulWidget {
   final Widget child;
@@ -60,11 +57,13 @@ class _SlidingAnimationState extends State<SlidingAnimation>
   void navigateToHome() {
     Future.delayed(
       kNavigationDuration,
-      () => Get.off(
-        () => const HomeView(),
-        transition: Transition.fadeIn,
-        duration: kTransitionDuration,
-      ),
+      () {
+        // Get.off(
+        //   () => const HomeView(),
+        //   transition: Transition.fadeIn,
+        //   duration: kTransitionDuration,
+        // );
+      },
     );
   }
 }
