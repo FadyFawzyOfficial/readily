@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../home/presentation/views/widgets/books_sliver_list.dart';
 import 'widgets/search_input.dart';
 
 class SearchView extends StatelessWidget {
@@ -14,6 +15,7 @@ class SearchView extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: const SearchInput(),
       ),
+      body: const CustomScrollView(slivers: [BooksSliverList()]),
     );
   }
 }

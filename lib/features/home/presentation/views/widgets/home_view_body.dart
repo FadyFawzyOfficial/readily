@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'featured_list_view.dart';
 import 'medium_title.dart';
-import 'seller_sliver_list.dart';
+import 'books_sliver_list.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -19,7 +19,7 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
           const SliverToBoxAdapter(child: MediumTitle()),
-          const SellerSliverList(),
+          const BooksSliverList(),
         ],
       ),
     );
