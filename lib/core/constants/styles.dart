@@ -42,3 +42,9 @@ const ts30Bold = TextStyle(
   fontSize: 30,
   fontWeight: FontWeight.bold,
 );
+
+const tsToggleButton = TextStyle(
+  color: Colors.white,
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+);

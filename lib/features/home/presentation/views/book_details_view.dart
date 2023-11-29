@@ -4,13 +4,14 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/constants/styles.dart';
 import 'widgets/book_image.dart';
 import 'widgets/book_rate.dart';
+import 'widgets/book_toggle_button.dart';
 
 class BookDetailsView extends StatelessWidget {
   static const name = '/bookDetails';
   const BookDetailsView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -39,6 +40,7 @@ class BookDetailsView extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 16),
             child: BookRate(),
           ),
+          BookToggleButton(),
         ],
       ),
     );
