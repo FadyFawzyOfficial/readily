@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:readily/features/search/presentation/views/search_view.dart';
 
 import '../../features/home/presentation/views/book_details_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
@@ -21,6 +22,11 @@ final router = GoRouter(
       path: BookDetailsView.name,
       name: BookDetailsView.name,
       builder: (context, state) => const BookDetailsView(),
+    ),
+    GoRoute(
+      path: SearchView.name,
+      name: SearchView.name,
+      builder: (context, state) => const SearchView(),
     ),
   ],
 );

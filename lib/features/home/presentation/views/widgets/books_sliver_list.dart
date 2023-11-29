@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'seller_list_tile.dart';
 
-class SellerSliverList extends StatelessWidget {
-  const SellerSliverList({super.key});
+class BooksSliverList extends StatelessWidget {
+  const BooksSliverList({super.key});
 
   @override
   Widget build(BuildContext context) {
