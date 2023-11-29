@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/search_input.dart';
+
 class SearchView extends StatelessWidget {
   static const name = '/search';
 
@@ -7,6 +9,11 @@ class SearchView extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: const SearchInput(),
+      ),
+    );
   }
 }
