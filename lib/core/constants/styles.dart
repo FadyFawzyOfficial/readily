@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart' show FontWeight, TextStyle;
+import 'package:flutter/material.dart'
+    show Colors, FontStyle, FontWeight, TextStyle;
 
 const ts14Medium = TextStyle(
   fontSize: 14,
@@ -30,7 +31,14 @@ const ts20Bold = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
-const ts30Normal = TextStyle(
+const ts20BoldItalicGrey = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+  fontStyle: FontStyle.italic,
+  color: Colors.grey,
+);
+
+const ts30Bold = TextStyle(
   fontSize: 30,
-  fontWeight: FontWeight.normal,
+  fontWeight: FontWeight.bold,
 );
