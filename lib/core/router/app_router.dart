@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../../features/home/presentation/views/book_details_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 
@@ -15,6 +16,11 @@ final router = GoRouter(
       path: HomeView.name,
       name: HomeView.name,
       builder: (context, state) => const HomeView(),
+    ),
+    GoRoute(
+      path: BookDetailsView.name,
+      name: BookDetailsView.name,
+      builder: (context, state) => const BookDetailsView(),
     ),
   ],
 );
