@@ -5,6 +5,7 @@ import '../../../../core/constants/styles.dart';
 import 'widgets/book_image.dart';
 import 'widgets/book_rate.dart';
 import 'widgets/book_toggle_button.dart';
+import 'widgets/featured_list_view.dart';
 
 class BookDetailsView extends StatelessWidget {
   static const name = '/bookDetails';
@@ -28,19 +29,32 @@ class BookDetailsView extends StatelessWidget {
       body: const Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 124),
+            padding: EdgeInsets.symmetric(horizontal: 124, vertical: 16),
             child: BookImage(),
           ),
+          Text('A Million To one', style: ts30Bold),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 8),
-            child: Text('A Million To one', style: ts30Bold),
+            child: Text('Fady Fawzy', style: ts20BoldItalicGrey),
           ),
-          Text('Fady Fawzy', style: ts20BoldItalicGrey),
+          BookRate(),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 16),
-            child: BookRate(),
+            padding: EdgeInsets.symmetric(vertical: 48),
+            child: BookToggleButton(),
           ),
-          BookToggleButton(),
+          // Similar Books Section
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: EdgeInsets.only(left: 24),
+              child: Text(
+                'You may also like:',
+                style: ts18SemiBold,
+              ),
+            ),
+          ),
+          Expanded(child: FeaturedListView()),
+          SizedBox(height: 24),
         ],
       ),
     );
