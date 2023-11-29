@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'core/constants/colors.dart';
 import 'core/constants/themes.dart';
-import 'features/splash/presentation/views/splash_view.dart';
+import 'core/router/app_router.dart';
 
 void main() => runApp(const Readily());
 
@@ -12,7 +12,7 @@ class Readily extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
@@ -21,7 +21,7 @@ class Readily extends StatelessWidget {
         appBarTheme: kAppBarTheme,
         cardTheme: kCardTheme,
       ),
-      home: const SplashView(),
+      routerConfig: router,
     );
   }
 }

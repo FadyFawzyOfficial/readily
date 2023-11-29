@@ -4,6 +4,8 @@ import '../../../../core/constants/strings.dart';
 import 'widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
+  static const name = '/home';
+
   const HomeView({super.key});
 
   @override
