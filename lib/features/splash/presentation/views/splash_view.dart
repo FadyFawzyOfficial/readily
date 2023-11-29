@@ -4,6 +4,7 @@ import '../../../../core/constants/strings.dart';
 import 'widgets/sliding_animation.dart';
 
 class SplashView extends StatelessWidget {
+  static const name = '/splash';
   const SplashView({super.key});
 
   @override
