@@ -4,8 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'core/constants/colors.dart';
 import 'core/constants/themes.dart';
 import 'core/router/app_router.dart';
+import 'core/utils/service_locator.dart';
 
-void main() => runApp(const Readily());
+void main() {
+  setup();
+  runApp(const Readily());
+}
 
 class Readily extends StatelessWidget {
   const Readily({super.key});
