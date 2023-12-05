@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart' show DioException;
 
 import '../../../../core/models/failure.dart';
 import '../../../../core/utils/api_service.dart';
@@ -22,8 +23,10 @@ class HomeRepoImpl implements HomeRepo {
           List<Book>.from(data['items'].map((book) => Book.fromMap(book)));
 
       return right(books);
+    } on DioException catch (e) {
+      return left(ServerFailure.fromDioException(e));
     } catch (e) {
-      return left(ServerFailure());
+      return left(ServerFailure(message: '$e'));
     }
   }
 
