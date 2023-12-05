@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart' show BlocProvider;
 
+import '../../../../../core/utils/service_locator.dart';
+import '../../../data/repos/home_repo_impl.dart';
+import '../../cubits/featured_books/featured_books_cubit.dart';
 import 'book_image.dart';
 
 class FeaturedListView extends StatelessWidget {
@@ -7,12 +11,16 @@ class FeaturedListView extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return ListView.separated(
-      padding: const EdgeInsets.all(24),
-      scrollDirection: Axis.horizontal,
-      itemCount: 10,
-      itemBuilder: (context, index) => const BookImage(),
-      separatorBuilder: (context, index) => const SizedBox(width: 16),
+    return BlocProvider(
+      create: (context) =>
+          FeaturedBooksCubit(getIt.get<HomeRepoImpl>())..fetchFeaturedBooks(),
+      child: ListView.separated(
+        padding: const EdgeInsets.all(24),
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) => const BookImage(),
+        separatorBuilder: (context, index) => const SizedBox(width: 16),
+      ),
     );
   }
 }
