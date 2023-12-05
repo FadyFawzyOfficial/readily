@@ -7,7 +7,7 @@ import 'core/router/app_router.dart';
 import 'core/utils/service_locator.dart';
 
 void main() {
-  setup();
+  setupServiceLocator();
   runApp(const Readily());
 }
 
