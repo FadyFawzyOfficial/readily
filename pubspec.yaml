@@ -41,6 +41,8 @@ dependencies:
   google_fonts: ^6.1.0
   # A Dart package that helps to implement value based equality without needing to explicitly override == and hashCode.
   equatable: ^2.0.5
+  # Functional Programming in Dart. Purify your Dart code using efficient immutable data structures, monads, lenses and other FP tools.
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
