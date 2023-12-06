@@ -22,8 +22,10 @@ class FeaturedListView extends StatelessWidget {
             return ListView.separated(
               padding: const EdgeInsets.all(24),
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
-              itemBuilder: (context, index) => const BookImage(),
+              itemCount: state.books.length,
+              itemBuilder: (context, index) => BookImage(
+                imageUrl: state.books[index].volumeInfo?.imageLinks?.thumbnail,
+              ),
               separatorBuilder: (context, index) => const SizedBox(width: 16),
             );
           } else if (state is FeaturedBooksFailure) {
