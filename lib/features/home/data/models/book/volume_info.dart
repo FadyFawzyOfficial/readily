@@ -27,6 +27,9 @@ class VolumeInfo extends Equatable {
   final String? previewLink;
   final String? infoLink;
   final String? canonicalVolumeLink;
+  final String? subtitle;
+  final double? averageRating;
+  final int? ratingsCount;
 
   const VolumeInfo({
     this.title,
@@ -48,6 +51,9 @@ class VolumeInfo extends Equatable {
     this.previewLink,
     this.infoLink,
     this.canonicalVolumeLink,
+    this.subtitle,
+    this.averageRating,
+    this.ratingsCount,
   });
 
   factory VolumeInfo.fromMap(Map<String, dynamic> data) => VolumeInfo(
@@ -79,6 +85,9 @@ class VolumeInfo extends Equatable {
         previewLink: data['previewLink'] as String?,
         infoLink: data['infoLink'] as String?,
         canonicalVolumeLink: data['canonicalVolumeLink'] as String?,
+        subtitle: data['subtitle'],
+        averageRating: data['averageRating']?.toDouble(),
+        ratingsCount: data['ratingsCount'],
       );
 
   Map<String, dynamic> toMap() => {
@@ -102,6 +111,9 @@ class VolumeInfo extends Equatable {
         'previewLink': previewLink,
         'infoLink': infoLink,
         'canonicalVolumeLink': canonicalVolumeLink,
+        'subtitle': subtitle,
+        'averageRating': averageRating,
+        'ratingsCount': ratingsCount,
       };
 
   /// `dart:convert`
@@ -136,6 +148,9 @@ class VolumeInfo extends Equatable {
     String? previewLink,
     String? infoLink,
     String? canonicalVolumeLink,
+    String? subtitle,
+    double? averageRating,
+    int? ratingsCount,
   }) {
     return VolumeInfo(
       title: title ?? this.title,
@@ -157,6 +172,9 @@ class VolumeInfo extends Equatable {
       previewLink: previewLink ?? this.previewLink,
       infoLink: infoLink ?? this.infoLink,
       canonicalVolumeLink: canonicalVolumeLink ?? this.canonicalVolumeLink,
+      subtitle: subtitle ?? this.subtitle,
+      averageRating: averageRating ?? this.averageRating,
+      ratingsCount: ratingsCount ?? this.ratingsCount,
     );
   }
 
@@ -185,6 +203,9 @@ class VolumeInfo extends Equatable {
       previewLink,
       infoLink,
       canonicalVolumeLink,
+      subtitle,
+      averageRating,
+      ratingsCount,
     ];
   }
 }
