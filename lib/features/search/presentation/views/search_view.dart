@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../home/presentation/views/widgets/books_sliver_list.dart';
+import '../../../home/presentation/views/widgets/books_vertical_sliver_list.dart';
 import 'widgets/search_input.dart';
 
 class SearchView extends StatelessWidget {
@@ -17,7 +17,7 @@ class SearchView extends StatelessWidget {
       ),
       body: const CustomScrollView(
         slivers: [
-          BooksSliverList(
+          BooksVerticalSliverList(
             books: [],
           )
         ],

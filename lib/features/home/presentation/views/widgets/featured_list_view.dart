@@ -6,7 +6,7 @@ import '../../../../../core/widgets/error_indicator.dart';
 import '../../../../../core/widgets/loading_indicator.dart';
 import '../../../data/repos/home_repo_impl.dart';
 import '../../cubits/featured_books/featured_books_cubit.dart';
-import 'book_image.dart';
+import 'books_horizontal_list_view.dart';
 
 class FeaturedListView extends StatelessWidget {
   const FeaturedListView({super.key});
@@ -19,15 +19,7 @@ class FeaturedListView extends StatelessWidget {
       child: BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
         builder: (context, state) {
           if (state is FeaturedBooksSuccess) {
-            return ListView.separated(
-              padding: const EdgeInsets.all(24),
-              scrollDirection: Axis.horizontal,
-              itemCount: state.books.length,
-              itemBuilder: (context, index) => BookImage(
-                imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail,
-              ),
-              separatorBuilder: (context, index) => const SizedBox(width: 16),
-            );
+            return BooksHorizontalListView(books: state.books);
           } else if (state is FeaturedBooksFailure) {
             return ErrorIndicator(message: state.message);
           }

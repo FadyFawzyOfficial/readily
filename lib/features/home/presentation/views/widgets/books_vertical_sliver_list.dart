@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../data/models/book/book.dart';
 import 'book_list_tile.dart';
 
-class BooksSliverList extends StatelessWidget {
+class BooksVerticalSliverList extends StatelessWidget {
   final List<Book> books;
 
-  const BooksSliverList({super.key, required this.books});
+  const BooksVerticalSliverList({super.key, required this.books});
 
   @override
   Widget build(BuildContext context) {
