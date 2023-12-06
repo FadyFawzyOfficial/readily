@@ -31,9 +31,11 @@ class BookDetailsSection extends StatelessWidget {
           child: Text(bookInfo.authors![0], style: ts20BoldItalicGrey),
         ),
         BookRate(count: bookInfo.ratingsCount, rate: bookInfo.averageRating),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 48),
-          child: BookToggleButton(),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 48),
+          child: BookToggleButton(
+            bookPreviewUrl: bookInfo.previewLink!,
+          ),
         ),
       ],
     );
