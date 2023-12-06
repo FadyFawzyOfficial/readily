@@ -22,7 +22,7 @@ class VolumeInfo extends Equatable {
   final bool? allowAnonLogging;
   final String? contentVersion;
   final PanelizationSummary? panelizationSummary;
-  final ImageLinks? imageLinks;
+  final ImageLinks imageLinks;
   final String? language;
   final String? previewLink;
   final String? infoLink;
@@ -43,7 +43,7 @@ class VolumeInfo extends Equatable {
     this.allowAnonLogging,
     this.contentVersion,
     this.panelizationSummary,
-    this.imageLinks,
+    required this.imageLinks,
     this.language,
     this.previewLink,
     this.infoLink,
@@ -73,9 +73,8 @@ class VolumeInfo extends Equatable {
             ? null
             : PanelizationSummary.fromMap(
                 data['panelizationSummary'] as Map<String, dynamic>),
-        imageLinks: data['imageLinks'] == null
-            ? null
-            : ImageLinks.fromMap(data['imageLinks'] as Map<String, dynamic>),
+        imageLinks:
+            ImageLinks.fromMap(data['imageLinks'] as Map<String, dynamic>),
         language: data['language'] as String?,
         previewLink: data['previewLink'] as String?,
         infoLink: data['infoLink'] as String?,
@@ -98,7 +97,7 @@ class VolumeInfo extends Equatable {
         'allowAnonLogging': allowAnonLogging,
         'contentVersion': contentVersion,
         'panelizationSummary': panelizationSummary?.toMap(),
-        'imageLinks': imageLinks?.toMap(),
+        'imageLinks': imageLinks.toMap(),
         'language': language,
         'previewLink': previewLink,
         'infoLink': infoLink,

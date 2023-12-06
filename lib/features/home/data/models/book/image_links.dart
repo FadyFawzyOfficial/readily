@@ -4,13 +4,13 @@ import 'package:equatable/equatable.dart';
 
 class ImageLinks extends Equatable {
   final String? smallThumbnail;
-  final String? thumbnail;
+  final String thumbnail;
 
-  const ImageLinks({this.smallThumbnail, this.thumbnail});
+  const ImageLinks({this.smallThumbnail, required this.thumbnail});
 
   factory ImageLinks.fromMap(Map<String, dynamic> data) => ImageLinks(
         smallThumbnail: data['smallThumbnail'] as String?,
-        thumbnail: data['thumbnail'] as String?,
+        thumbnail: data['thumbnail'],
       );
 
   Map<String, dynamic> toMap() => {
