@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../data/models/book/book.dart';
-import 'seller_list_tile.dart';
+import 'book_list_tile.dart';
 
 class BooksSliverList extends StatelessWidget {
   final List<Book> books;
@@ -15,7 +15,7 @@ class BooksSliverList extends StatelessWidget {
       sliver: SliverList.separated(
         // padding: const EdgeInsets.all(24),
         itemCount: books.length,
-        itemBuilder: (context, index) => SellerListTile(book: books[index]),
+        itemBuilder: (context, index) => BookListTile(book: books[index]),
         separatorBuilder: (context, index) => const SizedBox(height: 16),
       ),
     );

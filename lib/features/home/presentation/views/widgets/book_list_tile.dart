@@ -9,15 +9,18 @@ import 'book_image.dart';
 import 'book_price_and_rate.dart';
 import 'book_title.dart';
 
-class SellerListTile extends StatelessWidget {
+class BookListTile extends StatelessWidget {
   final Book book;
 
-  const SellerListTile({super.key, required this.book});
+  const BookListTile({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => context.pushNamed(BookDetailsView.name),
+      onTap: () => context.pushNamed(
+        BookDetailsView.name,
+        extra: book.volumeInfo,
+      ),
       child: Row(
         children: [
           Expanded(
@@ -46,8 +49,8 @@ class BookData extends StatelessWidget {
         BookTitle(title: bookInfo.title!),
         AuthorName(name: bookInfo.authors![0]),
         BookPriceAndRate(
-          rate: bookInfo.averageRating ?? 0,
-          count: bookInfo.ratingsCount ?? 0,
+          rate: bookInfo.averageRating,
+          count: bookInfo.ratingsCount,
         ),
       ],
     );

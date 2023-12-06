@@ -28,8 +28,8 @@ class VolumeInfo extends Equatable {
   final String? infoLink;
   final String? canonicalVolumeLink;
   final String? subtitle;
-  final double? averageRating;
-  final int? ratingsCount;
+  final double averageRating;
+  final int ratingsCount;
 
   const VolumeInfo({
     this.title,
@@ -52,8 +52,8 @@ class VolumeInfo extends Equatable {
     this.infoLink,
     this.canonicalVolumeLink,
     this.subtitle,
-    this.averageRating,
-    this.ratingsCount,
+    required this.averageRating,
+    required this.ratingsCount,
   });
 
   factory VolumeInfo.fromMap(Map<String, dynamic> data) => VolumeInfo(
@@ -87,8 +87,8 @@ class VolumeInfo extends Equatable {
         infoLink: data['infoLink'] as String?,
         canonicalVolumeLink: data['canonicalVolumeLink'] as String?,
         subtitle: data['subtitle'],
-        averageRating: data['averageRating']?.toDouble(),
-        ratingsCount: data['ratingsCount'],
+        averageRating: data['averageRating']?.toDouble() ?? 0,
+        ratingsCount: data['ratingsCount'] ?? 0,
       );
 
   Map<String, dynamic> toMap() => {
