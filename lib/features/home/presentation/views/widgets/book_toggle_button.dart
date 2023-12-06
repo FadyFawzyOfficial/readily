@@ -6,9 +6,11 @@ import '../../../../../core/utils/functions/url_launcher.dart';
 import 'book_price.dart';
 
 class BookToggleButton extends StatelessWidget {
-  const BookToggleButton({super.key});
-
   static const _toggleButtonsSelection = [false, true];
+
+  final String bookPreviewUrl;
+
+  const BookToggleButton({super.key, required this.bookPreviewUrl});
 
   @override
   Widget build(context) {
@@ -20,7 +22,7 @@ class BookToggleButton extends StatelessWidget {
       isSelected: _toggleButtonsSelection,
       onPressed: (index) {
         if (index == 1) {
-          urlLauncher(context: context, url: 'https://www.google.com');
+          urlLauncher(context: context, url: bookPreviewUrl);
         }
       },
       children: const [
