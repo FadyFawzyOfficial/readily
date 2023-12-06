@@ -2,17 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/decorations.dart';
 import '../../../../../core/constants/styles.dart';
+import '../../../../../core/utils/functions/url_launcher.dart';
 import 'book_price.dart';
 
-class BookToggleButton extends StatefulWidget {
+class BookToggleButton extends StatelessWidget {
   const BookToggleButton({super.key});
 
-  @override
-  State<BookToggleButton> createState() => _BookToggleButtonState();
-}
-
-class _BookToggleButtonState extends State<BookToggleButton> {
-  final _toggleButtonsSelection = [false, true];
+  static const _toggleButtonsSelection = [false, true];
 
   @override
   Widget build(context) {
@@ -22,8 +18,11 @@ class _BookToggleButtonState extends State<BookToggleButton> {
       selectedBorderColor: Colors.orangeAccent,
       constraints: const BoxConstraints(minWidth: 175, minHeight: 48),
       isSelected: _toggleButtonsSelection,
-      onPressed: (index) => setState(() =>
-          _toggleButtonsSelection[index] = !_toggleButtonsSelection[index]),
+      onPressed: (index) {
+        if (index == 1) {
+          urlLauncher(context: context, url: 'https://www.google.com');
+        }
+      },
       children: const [
         BookPrice(),
         Text('Free Preview', style: tsToggleButton),
