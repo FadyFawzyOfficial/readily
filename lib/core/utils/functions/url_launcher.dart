@@ -1,8 +1,12 @@
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/material.dart' show BuildContext;
+import 'package:url_launcher/url_launcher.dart' show canLaunchUrl, launchUrl;
 
-void urlLauncher({required String url}) async {
+import 'snack_bar_shower.dart';
+
+void urlLauncher({required BuildContext context, required String url}) async {
   final uri = Uri.parse(url);
-  if (await canLaunchUrl(uri)) {
-    await launchUrl(uri);
-  }
+  await canLaunchUrl(uri)
+      ? await launchUrl(uri)
+      // ignore: use_build_context_synchronously
+      : showSnackBar(context: context, message: 'Could not launch $url');
 }
