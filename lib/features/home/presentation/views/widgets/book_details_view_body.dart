@@ -17,9 +17,11 @@ class BookDetailsViewBody extends StatelessWidget {
           flex: 71,
           child: BookDetailsSection(bookInfo: bookInfo),
         ),
-        const Expanded(
+        Expanded(
           flex: 29,
-          child: SimilarBooksSection(),
+          child: SimilarBooksSection(
+            category: bookInfo.categories![0],
+          ),
         ),
       ],
     );
