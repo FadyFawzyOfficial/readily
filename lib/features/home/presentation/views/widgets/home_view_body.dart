@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'newest_books_sliver_list.dart';
 
 import 'featured_list_view.dart';
 import 'medium_title.dart';
-import 'books_sliver_list.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -19,7 +19,7 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
           const SliverToBoxAdapter(child: MediumTitle()),
-          const BooksSliverList(),
+          const NewestBooksSliverList(),
         ],
       ),
     );

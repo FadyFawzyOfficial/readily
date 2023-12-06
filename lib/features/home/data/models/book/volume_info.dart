@@ -27,6 +27,9 @@ class VolumeInfo extends Equatable {
   final String? previewLink;
   final String? infoLink;
   final String? canonicalVolumeLink;
+  final String? subtitle;
+  final double averageRating;
+  final int ratingsCount;
 
   const VolumeInfo({
     this.title,
@@ -43,16 +46,19 @@ class VolumeInfo extends Equatable {
     this.allowAnonLogging,
     this.contentVersion,
     this.panelizationSummary,
-    this.imageLinks,
+    required this.imageLinks,
     this.language,
     this.previewLink,
     this.infoLink,
     this.canonicalVolumeLink,
+    this.subtitle,
+    required this.averageRating,
+    required this.ratingsCount,
   });
 
   factory VolumeInfo.fromMap(Map<String, dynamic> data) => VolumeInfo(
         title: data['title'] as String?,
-        authors: data['authors'] as List<String>?,
+        authors: (data['authors'] as List<dynamic>?)?.cast<String>(),
         publisher: data['publisher'] as String?,
         publishedDate: data['publishedDate'] as String?,
         description: data['description'] as String?,
@@ -65,7 +71,7 @@ class VolumeInfo extends Equatable {
                 data['readingModes'] as Map<String, dynamic>),
         pageCount: data['pageCount'] as int?,
         printType: data['printType'] as String?,
-        categories: data['categories'] as List<String>?,
+        categories: (data['categories'] as List<dynamic>?)?.cast<String>(),
         maturityRating: data['maturityRating'] as String?,
         allowAnonLogging: data['allowAnonLogging'] as bool?,
         contentVersion: data['contentVersion'] as String?,
@@ -80,6 +86,9 @@ class VolumeInfo extends Equatable {
         previewLink: data['previewLink'] as String?,
         infoLink: data['infoLink'] as String?,
         canonicalVolumeLink: data['canonicalVolumeLink'] as String?,
+        subtitle: data['subtitle'],
+        averageRating: data['averageRating']?.toDouble() ?? 0,
+        ratingsCount: data['ratingsCount'] ?? 0,
       );
 
   Map<String, dynamic> toMap() => {
@@ -103,6 +112,9 @@ class VolumeInfo extends Equatable {
         'previewLink': previewLink,
         'infoLink': infoLink,
         'canonicalVolumeLink': canonicalVolumeLink,
+        'subtitle': subtitle,
+        'averageRating': averageRating,
+        'ratingsCount': ratingsCount,
       };
 
   /// `dart:convert`
@@ -137,6 +149,9 @@ class VolumeInfo extends Equatable {
     String? previewLink,
     String? infoLink,
     String? canonicalVolumeLink,
+    String? subtitle,
+    double? averageRating,
+    int? ratingsCount,
   }) {
     return VolumeInfo(
       title: title ?? this.title,
@@ -158,6 +173,9 @@ class VolumeInfo extends Equatable {
       previewLink: previewLink ?? this.previewLink,
       infoLink: infoLink ?? this.infoLink,
       canonicalVolumeLink: canonicalVolumeLink ?? this.canonicalVolumeLink,
+      subtitle: subtitle ?? this.subtitle,
+      averageRating: averageRating ?? this.averageRating,
+      ratingsCount: ratingsCount ?? this.ratingsCount,
     );
   }
 
@@ -186,6 +204,9 @@ class VolumeInfo extends Equatable {
       previewLink,
       infoLink,
       canonicalVolumeLink,
+      subtitle,
+      averageRating,
+      ratingsCount,
     ];
   }
 }

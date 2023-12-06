@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../data/models/book/volume_info.dart';
 import 'widgets/book_details_view_body.dart';
 
 class BookDetailsView extends StatelessWidget {
   static const name = '/bookDetails';
-  const BookDetailsView({super.key});
+
+  final VolumeInfo bookInfo;
+
+  const BookDetailsView({super.key, required this.bookInfo});
 
   @override
   Widget build(context) {
@@ -22,7 +26,9 @@ class BookDetailsView extends StatelessWidget {
           ),
         ],
       ),
-      body: const BookDetailsViewBody(),
+      body: BookDetailsViewBody(
+        bookInfo: bookInfo,
+      ),
     );
   }
 }

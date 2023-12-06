@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'seller_list_tile.dart';
+import '../../../data/models/book/book.dart';
+import 'book_list_tile.dart';
 
-class BooksSliverList extends StatelessWidget {
-  const BooksSliverList({super.key});
+class BooksVerticalSliverList extends StatelessWidget {
+  final List<Book> books;
+
+  const BooksVerticalSliverList({super.key, required this.books});
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +14,8 @@ class BooksSliverList extends StatelessWidget {
       padding: const EdgeInsets.all(24),
       sliver: SliverList.separated(
         // padding: const EdgeInsets.all(24),
-        itemCount: 10,
-        itemBuilder: (context, index) => const SellerListTile(),
+        itemCount: books.length,
+        itemBuilder: (context, index) => BookListTile(book: books[index]),
         separatorBuilder: (context, index) => const SizedBox(height: 16),
       ),
     );
