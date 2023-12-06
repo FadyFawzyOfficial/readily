@@ -1,30 +1,41 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/styles.dart';
+import '../../../data/models/book/volume_info.dart';
 import 'book_image.dart';
 import 'book_rate.dart';
 import 'book_toggle_button.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  final VolumeInfo bookInfo;
+
+  const BookDetailsSection({super.key, required this.bookInfo});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 124, vertical: 16),
-          child: BookImage(),
+          padding: const EdgeInsets.symmetric(horizontal: 124, vertical: 16),
+          child: BookImage(
+            imageUrl: bookInfo.imageLinks?.thumbnail,
+          ),
         ),
-        Text('A Million To one', style: ts30Bold),
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 8),
-          child: Text('Fady Fawzy', style: ts20BoldItalicGrey),
+        Text(
+          bookInfo.title!,
+          style: ts30Bold,
+          textAlign: TextAlign.center,
         ),
-        BookRate(),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 48),
-          child: BookToggleButton(),
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Text(bookInfo.authors![0], style: ts20BoldItalicGrey),
+        ),
+        BookRate(count: bookInfo.ratingsCount, rate: bookInfo.averageRating),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 48),
+          child: BookToggleButton(
+            bookPreviewUrl: bookInfo.previewLink!,
+          ),
         ),
       ],
     );

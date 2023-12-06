@@ -1,8 +1,9 @@
 import 'package:go_router/go_router.dart';
-import 'package:readily/features/search/presentation/views/search_view.dart';
 
+import '../../features/home/data/models/book/volume_info.dart';
 import '../../features/home/presentation/views/book_details_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
+import '../../features/search/presentation/views/search_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 
 // GoRouter configuration
@@ -21,7 +22,9 @@ final router = GoRouter(
     GoRoute(
       path: BookDetailsView.name,
       name: BookDetailsView.name,
-      builder: (context, state) => const BookDetailsView(),
+      builder: (context, state) => BookDetailsView(
+        bookInfo: state.extra as VolumeInfo,
+      ),
     ),
     GoRoute(
       path: SearchView.name,

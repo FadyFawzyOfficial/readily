@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/styles.dart';
-import 'featured_list_view.dart';
+import 'similar_books_list_view.dart';
 
 class SimilarBooksSection extends StatelessWidget {
-  const SimilarBooksSection({super.key});
+  final String category;
+
+  const SimilarBooksSection({super.key, required this.category});
 
   @override
   Widget build(context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 24),
           child: Text('You may also like:', style: ts18SemiBold),
         ),
-        Expanded(child: FeaturedListView()),
-        SizedBox(height: 24),
+        Expanded(child: SimilarBooksListView(category: category)),
+        const SizedBox(height: 24),
       ],
     );
   }

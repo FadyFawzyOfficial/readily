@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/decorations.dart';
 import '../../../../../core/constants/styles.dart';
+import '../../../../../core/utils/functions/url_launcher.dart';
 import 'book_price.dart';
 
-class BookToggleButton extends StatefulWidget {
-  const BookToggleButton({super.key});
+class BookToggleButton extends StatelessWidget {
+  static const _toggleButtonsSelection = [false, true];
 
-  @override
-  State<BookToggleButton> createState() => _BookToggleButtonState();
-}
+  final String bookPreviewUrl;
 
-class _BookToggleButtonState extends State<BookToggleButton> {
-  final _toggleButtonsSelection = [false, true];
+  const BookToggleButton({super.key, required this.bookPreviewUrl});
 
   @override
   Widget build(context) {
@@ -22,8 +20,11 @@ class _BookToggleButtonState extends State<BookToggleButton> {
       selectedBorderColor: Colors.orangeAccent,
       constraints: const BoxConstraints(minWidth: 175, minHeight: 48),
       isSelected: _toggleButtonsSelection,
-      onPressed: (index) => setState(() =>
-          _toggleButtonsSelection[index] = !_toggleButtonsSelection[index]),
+      onPressed: (index) {
+        if (index == 1) {
+          urlLauncher(context: context, url: bookPreviewUrl);
+        }
+      },
       children: const [
         BookPrice(),
         Text('Free Preview', style: tsToggleButton),

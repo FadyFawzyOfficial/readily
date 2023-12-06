@@ -3,9 +3,17 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constants/strings.dart';
 
 class BookImage extends StatelessWidget {
-  const BookImage({super.key});
+  final String? imageUrl;
+
+  const BookImage({super.key, this.imageUrl});
 
   @override
-  Widget build(BuildContext context) =>
-      const Card(child: Image(image: AssetImage(kTestImagePath)));
+  Widget build(BuildContext context) {
+    return Card(
+      child: Image(
+        image: NetworkImage(imageUrl ?? kTestImagePath),
+        fit: BoxFit.fill,
+      ),
+    );
+  }
 }
