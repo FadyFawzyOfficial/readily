@@ -25,7 +25,7 @@ class BooksHorizontalListView extends StatelessWidget {
         final bookInfo = books[index].volumeInfo;
         return InkWell(
           onTap: () => openSameView
-              ? context.goNamed(
+              ? context.pushReplacementNamed(
                   BookDetailsView.name,
                   extra: bookInfo,
                 )
