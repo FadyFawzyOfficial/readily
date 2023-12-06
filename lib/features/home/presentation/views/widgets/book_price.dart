@@ -6,5 +6,5 @@ class BookPrice extends StatelessWidget {
   const BookPrice({super.key});
 
   @override
-  Widget build(context) => const Text('19.99 €', style: ts20Bold);
+  Widget build(context) => const Text('Free', style: ts20Bold);
 }

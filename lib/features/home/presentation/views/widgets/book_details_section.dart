@@ -21,7 +21,7 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 8),
           child: Text('Fady Fawzy', style: ts20BoldItalicGrey),
         ),
-        BookRate(),
+        BookRate(count: 0, rate: 0),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 48),
           child: BookToggleButton(),

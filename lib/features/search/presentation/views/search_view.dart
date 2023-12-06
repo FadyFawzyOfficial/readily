@@ -15,7 +15,13 @@ class SearchView extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: const SearchInput(),
       ),
-      body: const CustomScrollView(slivers: [BooksSliverList()]),
+      body: const CustomScrollView(
+        slivers: [
+          BooksSliverList(
+            books: [],
+          )
+        ],
+      ),
     );
   }
 }
