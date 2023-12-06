@@ -22,7 +22,7 @@ class SellerListTile extends StatelessWidget {
         children: [
           Expanded(
             child: BookImage(
-              imageUrl: book.volumeInfo.imageLinks.thumbnail,
+              imageUrl: book.volumeInfo.imageLinks?.thumbnail,
             ),
           ),
           const SizedBox(width: 24),
