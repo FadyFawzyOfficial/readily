@@ -27,9 +27,8 @@ class HomeRepoImpl extends HomeRepo {
     } catch (e) {
       if (e is DioException) {
         return left(HttpException.formDio(dioException: e));
-      } else {
-        return left(AppException(message: '$e'));
       }
+      return left(AppException(message: '$e'));
     }
   }
 
@@ -44,9 +43,8 @@ class HomeRepoImpl extends HomeRepo {
     } catch (e) {
       if (e is DioException) {
         return left(HttpException.formDio(dioException: e));
-      } else {
-        return left(AppException(message: '$e'));
       }
+      return left(AppException(message: '$e'));
     }
   }
 }
