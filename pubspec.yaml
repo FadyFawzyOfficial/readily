@@ -43,6 +43,10 @@ dependencies:
   dartz: ^0.10.1
   # A powerful HTTP networking package, supports Interceptors, Aborting and canceling a request, Custom adapters, Transformers, etc.
   dio: ^5.4.0
+  # Lightweight and blazing fast key-value database written in pure Dart. Strongly encrypted using AES-256.
+  hive: ^2.2.3
+  # Extension for Hive. Makes it easier to use Hive in Flutter apps.
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +58,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  # Extension for Hive. Automatically generates TypeAdapters to store any class.
+  hive_generator: ^2.0.1
+  # A build system for Dart code generation and modular compilation.
+  # The build_runner package provides a concrete way of generating files using Dart code.
+  # Files are always generated directly on disk, and rebuilds are incremental
+  build_runner: ^2.4.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
