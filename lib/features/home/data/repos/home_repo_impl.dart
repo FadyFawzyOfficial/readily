@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 import '../../../../core/exceptions/app_exception.dart';
 import '../../domain/entities/book_entity.dart';
@@ -24,7 +25,11 @@ class HomeRepoImpl extends HomeRepo {
       books = await homeRemoteDataSource.fetchFeaturedBooks();
       return right(books);
     } catch (e) {
-      return left(AppException());
+      if (e is DioException) {
+        return left(HttpException.formDio(dioException: e));
+      } else {
+        return left(AppException(message: '$e'));
+      }
     }
   }
 
@@ -37,7 +42,11 @@ class HomeRepoImpl extends HomeRepo {
       books = await homeRemoteDataSource.fetchNewestBooks();
       return right(books);
     } catch (e) {
-      return left(AppException());
+      if (e is DioException) {
+        return left(HttpException.formDio(dioException: e));
+      } else {
+        return left(AppException(message: '$e'));
+      }
     }
   }
 }
