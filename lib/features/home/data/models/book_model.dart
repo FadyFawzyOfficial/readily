@@ -3,28 +3,14 @@ import 'dart:convert';
 import '../../domain/entities/book_entity.dart';
 
 class BookModel extends BookEntity {
-  final String id;
-  final String image;
-  final String title;
-  final String author;
-  final num rating;
-  final int ratingCount;
-
   BookModel({
-    required this.id,
-    required this.image,
-    required this.title,
-    required this.author,
-    required this.rating,
-    required this.ratingCount,
-  }) : super(
-          id: id,
-          image: image,
-          title: title,
-          author: author,
-          rating: rating,
-          ratingCount: 0,
-        );
+    required super.id,
+    required super.image,
+    required super.title,
+    required super.author,
+    required super.rating,
+    required super.ratingCount,
+  });
 
   BookModel copyWith({
     String? id,
