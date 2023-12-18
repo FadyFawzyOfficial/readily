@@ -1,16 +1,22 @@
+import '../../../../core/services/api_service.dart';
 import '../../domain/entities/book_entity.dart';
+import '../models/book_model.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks();
   Future<List<BookEntity>> fetchNewestBooks();
 }
 
+class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
+  final ApiService apiService;
 
-class HomeRemoteDataSourceImpl extends HomeRemoteDataSource{
+  HomeRemoteDataSourceImpl({required this.apiService});
+
   @override
-  Future<List<BookEntity>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
-    throw UnimplementedError();
+  Future<List<BookEntity>> fetchFeaturedBooks() async {
+    final data = await apiService.get(
+        endPoint: 'volumes?Filtering=free-ebooks&q=programming');
+    return List.from(data['items'].map((book) => BookModel.fromMap(book)));
   }
 
   @override
@@ -18,5 +24,4 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource{
     // TODO: implement fetchNewestBooks
     throw UnimplementedError();
   }
-
 }
