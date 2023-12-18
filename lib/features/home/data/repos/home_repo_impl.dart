@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 import '../../../../core/exceptions/app_exception.dart';
+import '../../../../core/exceptions/http_exception.dart';
 import '../../domain/entities/book_entity.dart';
 import '../../domain/repos/home_repo.dart';
 import '../data_sources/home_local_data_source.dart';
