@@ -28,6 +28,9 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   Future<List<BookEntity>> fetchNewestBooks() async {
     final data = await apiService.get(
         endPoint: 'volumes?filtering=free-ebooks&q=programming&sorting=newest');
-    return List.from(data['items'].map((book) => BookModel.fromMap(book)));
+    final List<BookEntity> books =
+        List.from(data['items'].map((book) => BookModel.fromMap(book)));
+    cacheBooks(books, kNewestBox);
+    return books;
   }
 }
