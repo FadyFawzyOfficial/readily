@@ -41,6 +41,8 @@ dependencies:
   google_fonts: ^6.1.0
   # Functional Programming in Dart. Purify your Dart code using efficient immutable data structures, monads, lenses and other FP tools.
   dartz: ^0.10.1
+  # A powerful HTTP networking package, supports Interceptors, Aborting and canceling a request, Custom adapters, Transformers, etc.
+  dio: ^5.4.0
 
 dev_dependencies:
   flutter_test:
