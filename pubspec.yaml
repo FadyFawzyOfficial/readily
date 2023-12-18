@@ -43,6 +43,8 @@ dependencies:
   dartz: ^0.10.1
   # A powerful HTTP networking package, supports Interceptors, Aborting and canceling a request, Custom adapters, Transformers, etc.
   dio: ^5.4.0
+  # Lightweight and blazing fast key-value database written in pure Dart. Strongly encrypted using AES-256.
+  hive: ^2.2.3
 
 dev_dependencies:
   flutter_test:
