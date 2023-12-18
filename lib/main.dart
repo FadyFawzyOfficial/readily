@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'core/constants/colors.dart';
+import 'core/constants/strings.dart';
 import 'core/constants/themes.dart';
 import 'core/router/app_router.dart';
+import 'features/home/domain/entities/book_entity.dart';
 
-void main() => runApp(const Readily());
+void main() async {
+  runApp(const Readily());
+
+  // Refactor Needed
+  await Hive.initFlutter();
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox(kFeaturedBox);
+}
 
 class Readily extends StatelessWidget {
   const Readily({super.key});
