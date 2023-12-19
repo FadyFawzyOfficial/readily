@@ -9,9 +9,9 @@ import '../../services/api_service.dart';
 GetIt getIt = GetIt.instance;
 
 void setupServiceLocator() {
-  getIt.registerSingleton(ApiService(dio: Dio()));
-  getIt.registerSingleton<HomeRepoImpl>(
-    HomeRepoImpl(
+  getIt.registerLazySingleton<ApiService>(() => ApiService(dio: Dio()));
+  getIt.registerLazySingleton<HomeRepoImpl>(
+    () => HomeRepoImpl(
       homeRemoteDataSource: HomeRemoteDataSourceImpl(
         apiService: getIt.get<ApiService>(),
       ),
